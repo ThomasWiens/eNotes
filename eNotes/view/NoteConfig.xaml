@@ -1,0 +1,11 @@
+﻿<Window x:Class="eNotes.view.NoteConfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:eNotes.view"
+        Icon="../assets/eNotes.ico"
+        WindowStartupLocation="CenterOwner"
+        Title="NoteConfig" Width="640" Height="480" MinWidth="640" MinHeight="480">
+    <Grid>
+        <local:Einstellung x:Name="cont"></local:Einstellung>
+    </Grid>
+</Window>

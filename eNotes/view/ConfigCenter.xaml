@@ -1,0 +1,56 @@
+﻿<Window x:Class="eNotes.view.ConfigCenter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:eNotes.view"
+        Title="eNotes-Center" Icon="../assets/eNotes.ico" Width="640" Height="480" MinWidth="640" MinHeight="480"
+        Closing="Window_Closing">
+    <TabControl TabStripPlacement="Left">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel>
+                    <Image Height="20" Source="../assets/wrench.png"></Image>
+                    <TextBlock>Einstellungen</TextBlock>
+                </StackPanel>
+            </TabItem.Header>
+            <local:Einstellung x:Name="Einstellung"/>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel>
+                    <Image Height="20" Source="../assets/archive.png"></Image>
+                    <TextBlock>Archiv</TextBlock>
+                </StackPanel>
+            </TabItem.Header>
+            <local:Archive x:Name="aContent"></local:Archive>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel>
+                    <Image Height="20" Source="../assets/info.png"></Image>
+                    <TextBlock>Über</TextBlock>
+                </StackPanel>
+            </TabItem.Header>
+            <StackPanel>
+                <StackPanel.Background>
+                    <ImageBrush  AlignmentX="Right" AlignmentY="Bottom" Stretch="None" ImageSource="../assets/fhbielefeld_logo.png"></ImageBrush>
+                </StackPanel.Background>
+                <WrapPanel Margin="10">
+                    <TextBlock FontFamily="calibri" FontSize="25" FontWeight="Bold" Width="150">Erstellt von:</TextBlock>
+                    <TextBlock FontFamily="calibri" FontSize="25" Margin="10,0,0,0">Thomas Wiens</TextBlock>
+                </WrapPanel>
+                <WrapPanel Margin="10">
+                    <TextBlock FontFamily="calibri" FontSize="25" FontWeight="Bold" Width="150">E-Mail:</TextBlock>
+                    <TextBlock FontFamily="calibri" FontSize="25" Margin="10,0,0,0">twiens@fh-bielefeld.de</TextBlock>
+                </WrapPanel>
+                <WrapPanel Margin="10">
+                    <TextBlock FontFamily="calibri" FontSize="25" FontWeight="Bold" Width="150">Modul:</TextBlock>
+                    <TextBlock FontFamily="calibri" FontSize="25" Margin="10,0,0,0">Usability und Datenvisualisierung</TextBlock>
+                </WrapPanel>
+                <WrapPanel Margin="10">
+                    <TextBlock FontFamily="calibri" FontSize="25" FontWeight="Bold" Width="150">Semester:</TextBlock>
+                    <TextBlock FontFamily="calibri" FontSize="25" Margin="10,0,0,0">Sommersemester 2015</TextBlock>
+                </WrapPanel>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+</Window>

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="eNotes.view.Archive"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:eNotes.view"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <ComboBox Name="cmbSort" Margin="3,3,3,3" SelectedIndex="0" SelectionChanged="Sort_SelectionChanged" Width="175" ToolTip="Sortieren&#xD;&#xA;&#xD;&#xA;Sortiert das Archiv je nach getroffener Auswahl.">
+                <ComboBoxItem>Erstellung-Aufsteigend</ComboBoxItem>
+                <ComboBoxItem>Erstellung-Absteigend</ComboBoxItem>
+                <ComboBoxItem>Änderung-Aufsteigend</ComboBoxItem>
+                <ComboBoxItem>Änderung-Absteigend</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Margin="0,3,3,3" Initialized="cmbFilter_Initialized" SelectedIndex="0" SelectionChanged="Filter_SelectionChanged" Width="100" ToolTip="Filter&#xD;&#xA;&#xD;&#xA;Filtert die Notizen mit der ausgewählten Farbe heraus.">
+                <ComboBoxItem>-Kein Filter-</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Löschen" Margin="3,3,3,3" Click="Loeschen_Click" ToolTip="Löschen&#xD;&#xA;&#xD;&#xA;Löscht unwiederruflich alle ausgewählten Notizen."/>
+            <Button Content="Wiederherstellen" Margin="0,3,3,3" Click="Wiederherstellen_Click" ToolTip="Wiederherstellen&#xD;&#xA;&#xD;&#xA;Zeigt alle ausgewählten Notizen wieder an."/>
+        </StackPanel>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="../assets/pinboard_texture.png" Viewport="0,0,900,563" ViewportUnits="Absolute" TileMode="Tile" Stretch="Fill" AlignmentY="Top" AlignmentX="Left"></ImageBrush>
+            </Grid.Background>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <WrapPanel Name="archiveContent" Initialized="archiveContent_Initialized">
+                    <WrapPanel.Resources>
+                        <Style TargetType="{x:Type local:NotePreview}">
+                            <Setter Property="Margin" Value="10,10,10,10"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
+</UserControl>
